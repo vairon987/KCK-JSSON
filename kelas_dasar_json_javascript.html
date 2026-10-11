@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101827">
+<title>Kelas Dasar • JSON & JavaScript</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1120;--panel:#111b2d;--panel2:#162238;--line:#26364f;--text:#e8eef8;--muted:#9aabc4;--blue:#6da9ff;--blue2:#2e72d2;--green:#78d6b0;--red:#ff9292;--yellow:#f3cc7a;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#142644 0,transparent 35%),var(--bg);color:var(--text);font:15px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}.topbar{position:sticky;top:0;z-index:10;background:#0b1120dd;backdrop-filter:blur(16px);border-bottom:1px solid #26364f}.nav{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;gap:10px;align-items:center;font-weight:750;letter-spacing:-.3px}.logo{display:grid;place-items:center;width:35px;height:35px;border-radius:11px;background:#1b3150;color:#91bdff;border:1px solid #35527b;font-weight:900}.brand small{display:block;color:var(--muted);font-weight:500;font-size:11px;letter-spacing:.2px}.navlinks{display:flex;gap:7px;flex-wrap:wrap}.navlinks a{color:var(--muted);text-decoration:none;padding:7px 10px;border-radius:9px;font-size:13px}.navlinks a:hover{color:var(--text);background:var(--panel2)}.hero{padding:54px 0 30px;display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:-1.8px;margin:12px 0 16px}.hero h1 span{color:var(--blue)}.hero p{color:var(--muted);max-width:620px;margin:0}.hero-card,.card{background:linear-gradient(150deg,#15233a,#101a2b);border:1px solid var(--line);border-radius:var(--radius);padding:22px}.hero-card{padding:23px}.hero-card .mini-title{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}.progress{height:7px;background:#26364f;border-radius:99px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;width:0;background:var(--blue);transition:width .25s}.statrow{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.statrow strong{color:var(--text)}.section{padding:25px 0;scroll-margin-top:85px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:16px}.section h2{font-size:25px;letter-spacing:-.6px;margin:4px 0}.section-head p{color:var(--muted);margin:0}.pill{font-size:11px;color:#a8caff;background:#1a2c46;border:1px solid #2d4567;padding:5px 9px;border-radius:999px;white-space:nowrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card h3{margin:0 0 8px;font-size:17px}.card p{color:var(--muted);margin:8px 0}.callout{border-left:3px solid var(--blue);padding:10px 13px;background:#14243b;border-radius:0 10px 10px 0;color:#c7d7ed;margin:14px 0}.code{position:relative;background:#080e18;border:1px solid #26364f;border-radius:12px;margin:12px 0;overflow:hidden}.code pre{margin:0;padding:17px;overflow:auto;color:#d7e5fa;font:13px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}.code-head{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#111b2a;border-bottom:1px solid #26364f;color:var(--muted);font-size:11px}.copy{border:1px solid #34465f;background:#18263a;color:#dce9fb;padding:4px 9px;border-radius:7px;font-size:11px}.copy:hover{background:#243b5a}.tag{display:inline-block;font-size:11px;border-radius:6px;padding:2px 7px;margin:2px 3px 2px 0;background:#1c2e46;color:#a9cbff}.tag.green{color:#9be5c8;background:#16342f}.tag.yellow{color:#f3d89c;background:#352d1c}.lesson-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.lesson-nav button,.action{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:10px;padding:9px 13px}.lesson-nav button.active,.action.primary{background:#234b7d;border-color:#3c75b6;color:white}.lesson{display:none}.lesson.active{display:block}.lesson ul{padding-left:21px;color:var(--muted)}.lesson li{margin:6px 0}.quiz{margin-top:18px;padding:18px;background:#0d1726;border:1px solid var(--line);border-radius:14px}.quiz h4{margin:0 0 12px}.options{display:grid;gap:8px}.options button{text-align:left;background:#152136;color:var(--text);border:1px solid #2a3c56;padding:10px 12px;border-radius:9px}.options button:hover{border-color:var(--blue)}.options button.correct{border-color:var(--green);background:#15332d}.options button.wrong{border-color:var(--red);background:#351e29}.feedback{min-height:24px;color:var(--muted);font-size:13px;margin-top:10px}.playground{display:grid;grid-template-columns:1fr 1fr;gap:14px}.editor{width:100%;min-height:245px;resize:vertical;background:#080e18;color:#dce8fa;border:1px solid #2b3d57;border-radius:12px;padding:14px;font:13px/1.6 ui-monospace,Consolas,monospace;outline:none}.editor:focus{border-color:var(--blue)}.output{min-height:245px;white-space:pre-wrap;overflow-wrap:anywhere;background:#080e18;border:1px solid #2b3d57;border-radius:12px;padding:14px;color:#aee6ce;font:13px/1.6 ui-monospace,Consolas,monospace}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.action{font-size:13px}.action:hover{border-color:var(--blue);color:var(--text)}.hint{font-size:12px;color:var(--muted)}.checklist{display:grid;gap:10px}.checklist label{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);background:#101a2b;border-radius:10px;color:var(--muted)}.checklist input{accent-color:var(--blue);margin-top:5px}.footer{padding:30px 0 45px;color:var(--muted);text-align:center;font-size:12px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#20344e;border:1px solid #3a587e;color:white;padding:10px 15px;border-radius:10px;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:36px}.grid2,.grid3,.playground{grid-template-columns:1fr}.nav{align-items:flex-start;padding:12px 0;flex-direction:column}.navlinks{gap:2px}.navlinks a{padding:6px 8px}.section-head{align-items:flex-start;flex-direction:column}.hero h1{letter-spacing:-1px}.card{padding:17px}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav"><div class="brand"><div class="logo">{ }</div><div>KELAS DASAR<small>JSON & JavaScript • Frontend Lab</small></div></div><nav class="navlinks"><a href="#mulai">Mulai</a><a href="#json">JSON</a><a href="#javascript">JavaScript</a><a href="#lab">Lab</a><a href="#latihan">Latihan</a></nav></div></header>
+<main class="wrap">
+<section class="hero" id="mulai"><div><div class="eyebrow">Modul 01 · Fondasi coding</div><h1>Belajar data.<br><span>Bangun logika.</span></h1><p>Mulai dari aturan file JSON, kenali tipe data, lalu masuk ke JavaScript: variable, object, array, console, dan if/else. Santai, kita bedah satu per satu tanpa bikin kepala jadi kipas laptop.</p><div class="toolbar"><a class="action primary" href="#json" style="text-decoration:none">Mulai belajar ↓</a><a class="action" href="#lab" style="text-decoration:none">Coba kode</a></div></div><aside class="hero-card"><div class="mini-title">Progres belajar</div><div style="font-size:25px;font-weight:750;margin-top:5px"><span id="progressText">0%</span> <span style="font-size:13px;color:var(--muted);font-weight:500">selesai</span></div><div class="progress"><span id="progressBar"></span></div><div class="statrow"><span>Checklist materi</span><strong id="doneCount">0 / 6</strong></div><div class="callout" style="margin-bottom:0">Target hari ini: paham konsepnya, bukan sekadar menyalin kode.</div></aside></section>
+<section class="section" id="json"><div class="section-head"><div><div class="eyebrow">Bagian 1</div><h2>Kenalan dengan JSON</h2><p>Format data yang sering dipakai, termasuk di addon Minecraft Bedrock.</p></div><span class="pill">Data, bukan bahasa pemrograman</span></div>
+<div class="grid2"><article class="card"><h3>01 · Nama dan ekstensi file</h3><p>Nama file bebas, tetapi ekstensi harus tepat <code>.json</code>. Ekstensi adalah bagian akhir nama file yang menunjukkan formatnya.</p><div class="code"><div class="code-head"><span>CONTOH NAMA FILE</span><button class="copy" data-copy="vairon ganteng.json">Salin</button></div><pre>vairon ganteng.json
+data-pemain.json
+config.json</pre></div><p><span class="tag green">Benar: data.json</span><span class="tag yellow">Salah: data.json1</span><span class="tag yellow">Salah: data. Json</span></p><p class="hint">Catatan: beberapa sistem operasi menyembunyikan ekstensi. Pastikan nama lengkapnya benar, bukan hanya tampilan namanya.</p></article>
+<article class="card"><h3>02 · Bentuk dasar JSON</h3><p>JSON adalah singkatan dari <b>JavaScript Object Notation</b>. Umumnya data object dibuka dengan <code>{</code> dan ditutup dengan <code>}</code>. JSON juga bisa berupa array yang dibuka dengan <code>[</code> dan ditutup dengan <code>]</code>.</p><div class="code"><div class="code-head"><span>JSON VALID</span><button class="copy" data-copy='{\n  "nama": "Vairon",\n  "level": 10,\n  "aktif": true\n}'>Salin</button></div><pre>{
+  "nama": "Vairon",
+  "level": 10,
+  "aktif": true
+}</pre></div><div class="callout">Setiap kurung pembuka harus punya pasangan penutup. Koma memisahkan pasangan key-value, tetapi jangan menaruh koma setelah item terakhir.</div></article></div>
+<div class="grid2" style="margin-top:16px"><article class="card"><h3>03 · Lima hal yang wajib diingat</h3><ul><li><b>Key</b> atau nama properti harus berupa string, memakai tanda kutip ganda.</li><li>String juga memakai tanda kutip ganda, misalnya <code>"halo"</code>.</li><li>Number ditulis tanpa tanda kutip: <code>25</code>, <code>3.14</code>.</li><li>Boolean hanya <code>true</code> atau <code>false</code>, tanpa tanda kutip.</li><li>Gunakan koma di antara properti atau item, bukan setelah yang terakhir.</li></ul></article><article class="card"><h3>04 · Contoh salah dan perbaikannya</h3><div class="code"><div class="code-head"><span>SALAH ❌</span></div><pre>{
+  "nama": "Vai"
+  "level": 10,
+  "aktif": "true",
+}</pre></div><div class="code"><div class="code-head"><span>BENAR ✓</span><button class="copy" data-copy='{\n  "nama": "Vai",\n  "level": 10,\n  "aktif": true\n}'>Salin</button></div><pre>{
+  "nama": "Vai",
+  "level": 10,
+  "aktif": true
+}</pre></div><p>Versi benar menambahkan koma yang hilang, dan mengubah boolean dari string menjadi nilai boolean.</p></article></div>
+<div class="card" style="margin-top:16px"><h3>05 · JSON boleh bersarang (nested)</h3><p>Object dapat berisi object lain atau array. Yang penting, setiap pembuka punya penutup dan sintaksnya tetap valid.</p><div class="code"><div class="code-head"><span>DATA BERTINGKAT</span><button class="copy" data-copy='{\n  "judul": {\n    "daftar": [\n      { "nama": "Vairon" },\n      { "level": 10 },\n      { "aktif": true }\n    ],\n    "catatan": "Belajar JSON"\n  }\n}'>Salin</button></div><pre>{
+  "judul": {
+    "daftar": [
+      { "nama": "Vairon" },
+      { "level": 10 },
+      { "aktif": true }
+    ],
+    "catatan": "Belajar JSON"
+  }
+}</pre></div><p class="hint">JSON tidak mengharuskan setiap object punya judul. Bentuknya mengikuti struktur data yang dibutuhkan.</p></div>
+<div class="quiz" data-quiz="json"><h4>Cek pemahaman · JSON</h4><p>Manakah nilai boolean yang benar dalam JSON?</p><div class="options"><button data-correct="false">"aktif": "true"</button><button data-correct="true">"aktif": true</button><button data-correct="false">"aktif": Benar</button></div><div class="feedback" aria-live="polite"></div></div>
+</section>
+<section class="section" id="javascript"><div class="section-head"><div><div class="eyebrow">Bagian 2</div><h2>Masuk ke JavaScript</h2><p>JavaScript (JS) adalah bahasa pemrograman yang bisa menjalankan logika.</p></div><span class="pill">Baca · Pahami · Coba</span></div>
+<div class="lesson-nav" role="tablist"><button class="active" data-lesson="tipe">Tipe data</button><button data-lesson="console">Console</button><button data-lesson="variable">Variable</button><button data-lesson="object">Object & Array</button><button data-lesson="logic">If / Else</button></div>
+<div class="lesson active" id="lesson-tipe"><div class="grid2"><article class="card"><h3>Tipe data dasar</h3><p><span class="tag">String</span> Teks yang dibungkus tanda kutip.</p><div class="code"><pre>const nama = "Vairon";</pre></div><p><span class="tag">Number</span> Angka, tidak perlu tanda kutip.</p><div class="code"><pre>let umur = 22;</pre></div><p><span class="tag">Boolean</span> Nilai benar atau salah.</p><div class="code"><pre>const aktif = true;
+const tidur = false;</pre></div></article><article class="card"><h3>Ingat perbedaannya</h3><div class="code"><pre>const level = 10;       // number
+const levelTeks = "10"; // string
+const online = true;    // boolean
+const onlineTeks = "true"; // string</pre></div><p>Walaupun terlihat mirip, <code>10</code> dan <code>"10"</code> punya tipe berbeda. Begitu juga <code>true</code> dan <code>"true"</code>.</p><div class="callout">Komentar dimulai dengan <code>//</code>. Komentar membantu manusia membaca kode dan tidak dijalankan sebagai instruksi.</div></article></div></div>
+<div class="lesson" id="lesson-console"><div class="grid2"><article class="card"><h3>Console.log()</h3><p><code>console.log()</code> menampilkan nilai ke console. Berguna untuk memeriksa isi variable atau mencari sumber bug saat debugging.</p><div class="code"><div class="code-head"><span>JAVASCRIPT</span><button class="copy" data-copy='console.log("Halo! Saya ganteng");'>Salin</button></div><pre>console.log("Halo! Saya ganteng");</pre></div></article><article class="card"><h3>Output-nya</h3><div class="code"><pre>Halo! Saya ganteng</pre></div><p>Bisa juga menampilkan beberapa nilai sekaligus:</p><div class="code"><pre>const nama = "Vairon";
+console.log("Nama:", nama);
+console.log("Level:", 10);</pre></div></article></div></div>
+<div class="lesson" id="lesson-variable"><div class="grid2"><article class="card"><h3>Variable itu wadah</h3><p>Variable menyimpan nilai supaya bisa dipakai lagi.</p><div class="code"><pre>let umur = 17;
+umur = 18; // boleh diubah
+
+const nama = "Vairon";
+// nama = "Yuki"; // error</pre></div><p><code>let</code> dipakai jika nilainya akan diubah. <code>const</code> dipakai jika nama variable tidak akan diberi nilai ulang.</p></article><article class="card"><h3>Kenapa ada dua?</h3><ul><li><code>let skor = 0</code>, lalu skor bisa diubah menjadi 10.</li><li><code>const nama = "Vai"</code>, variable <code>nama</code> tidak bisa diberi nilai ulang.</li><li><code>const</code> pada object/array tidak membuat seluruh isinya otomatis beku. Properti atau item masih bisa diubah.</li></ul><div class="callout">Untuk pemula, mulai dengan <code>const</code>. Ganti ke <code>let</code> saat kamu memang perlu memberi nilai ulang.</div></article></div></div>
+<div class="lesson" id="lesson-object"><div class="grid2"><article class="card"><h3>Object = lemari berlabel</h3><p>Object menyimpan data dengan pasangan key dan value. Ambil nilainya menggunakan titik atau bracket.</p><div class="code"><pre>const player = {
+  name: "Vai ganteng",
+  level: 10,
+  ganteng: true
+};
+
+console.log(player.name);
+console.log(player.level);</pre></div><p>Output: <code>Vai ganteng</code>, lalu <code>10</code>.</p></article><article class="card"><h3>Array = rak bernomor</h3><p>Array menyimpan kumpulan item dalam urutan. Nomor indeks dimulai dari <b>0</b>.</p><div class="code"><pre>const daftarItem = [
+  "pedang",
+  "apel",
+  "kontci"
+];
+
+console.log(daftarItem[0]); // pedang
+console.log(daftarItem[1]); // apel
+console.log(daftarItem[2]); // kontci</pre></div><div class="callout">Indeks 0 adalah item pertama. Array tidak mulai menghitung dari 1, karena JavaScript punya kebiasaan kecil yang suka bikin pemula mengernyit.</div></article></div></div>
+<div class="lesson" id="lesson-logic"><div class="grid2"><article class="card"><h3>If / Else = pengambilan keputusan</h3><p><code>if</code> menjalankan blok jika kondisi benar. <code>else</code> menjalankan blok alternatif jika kondisi salah.</p><div class="code"><pre>let apel = 10;
+
+if (apel === 10) {
+  console.log("Apel ada 10!");
+} else {
+  console.log("Jumlah apel bukan 10.");
+}</pre></div></article><article class="card"><h3>Operator yang sering dipakai</h3><ul><li><code>===</code> sama persis</li><li><code>!==</code> tidak sama</li><li><code>&gt;</code> lebih besar</li><li><code>&lt;</code> lebih kecil</li><li><code>&gt;=</code> lebih besar atau sama</li><li><code>&lt;=</code> lebih kecil atau sama</li></ul><div class="callout">Pada contoh apel, gunakan <code>apel === 10</code> jika maksudnya jumlah apel tepat 10. Kondisi <code>apel &gt; 10</code> hanya benar jika jumlahnya lebih dari 10.</div></article></div><div class="quiz" data-quiz="if"><h4>Cek pemahaman · If / Else</h4><p>Jika <code>let apel = 10</code>, kondisi mana yang benar untuk mengecek apakah jumlahnya tepat 10?</p><div class="options"><button data-correct="false">apel &gt; 10</button><button data-correct="true">apel === 10</button><button data-correct="false">apel = 10</button></div><div class="feedback" aria-live="polite"></div></div></div>
+</section>
+<section class="section" id="lab"><div class="section-head"><div><div class="eyebrow">Bagian 3</div><h2>Playground mini</h2><p>Coba kode sendiri langsung di halaman ini.</p></div><span class="pill">Berjalan di browser</span></div>
+<div class="grid2"><div class="card"><h3>JSON Validator</h3><p>Tempel JSON kamu. Tool ini akan mengecek apakah sintaksnya valid dan menampilkan hasil yang sudah dirapikan.</p><textarea class="editor" id="jsonInput" spellcheck="false">{
+  "nama": "Vairon",
+  "level": 10,
+  "aktif": true,
+  "item": ["pedang", "apel"]
+}</textarea><div class="toolbar"><button class="action primary" id="checkJson">Periksa JSON</button><button class="action" id="formatJson">Rapikan</button><button class="action" id="resetJson">Reset contoh</button></div><div class="output" id="jsonOutput" aria-live="polite">Hasil pemeriksaan akan muncul di sini.</div><p class="hint">Validator ini memeriksa sintaks JSON, bukan aturan khusus suatu addon.</p></div>
+<div class="card"><h3>JavaScript Console mini</h3><p>Tulis ekspresi atau kode JS sederhana. Output dari <code>console.log()</code> akan ditampilkan di bawah. Jangan masukkan kode yang tidak kamu pahami.</p><textarea class="editor" id="jsInput" spellcheck="false">const player = {
+  name: "Vairon",
+  level: 10,
+  active: true
+};
+
+console.log(player.name);
+console.log("Level:", player.level);
+
+if (player.level >= 10) {
+  console.log("Level sudah mencapai 10!");
+} else {
+  console.log("Masih latihan!");
+}</textarea><div class="toolbar"><button class="action primary" id="runJs">Jalankan kode</button><button class="action" id="resetJs">Reset contoh</button></div><div class="output" id="jsOutput" aria-live="polite">Output console akan muncul di sini.</div><p class="hint">Kode dijalankan di sandbox browser terbatas. Akses jaringan dan penyimpanan diblokir; jangan anggap ini pengganti lingkungan pengembangan sungguhan.</p></div></div>
+</section>
+<section class="section" id="latihan"><div class="section-head"><div><div class="eyebrow">Bagian 4</div><h2>Checklist kelulusan</h2><p>Tandai materi yang sudah kamu pahami.</p></div><span class="pill">Pelan-pelan, yang penting paham</span></div>
+<div class="card checklist">
+<label><input type="checkbox" data-progress> Aku bisa membedakan nama file dan ekstensi <code>.json</code>.</label>
+<label><input type="checkbox" data-progress> Aku paham kurung, koma, string, number, dan boolean di JSON.</label>
+<label><input type="checkbox" data-progress> Aku tahu JSON adalah format data, bukan bahasa pemrograman.</label>
+<label><input type="checkbox" data-progress> Aku bisa menjelaskan <code>console.log()</code>, <code>let</code>, dan <code>const</code>.</label>
+<label><input type="checkbox" data-progress> Aku paham object, array, dan indeks array yang dimulai dari 0.</label>
+<label><input type="checkbox" data-progress> Aku bisa membaca kondisi <code>if / else</code>.</label>
+</div>
+<div class="card" style="margin-top:16px"><h3>Tantangan kecil 🧩</h3><p>Buat object bernama <code>player</code> yang punya <code>name</code>, <code>level</code>, dan <code>active</code>. Setelah itu, tampilkan nama dan level dengan <code>console.log()</code>. Terakhir, buat <code>if / else</code> untuk mengecek apakah level minimal 10.</p><p class="hint">Petunjuk: gunakan string untuk nama, number untuk level, dan boolean untuk status aktif.</p></div>
+</section>
+<footer class="footer">KELAS DASAR · JSON & JavaScript<br>Single HTML · CSS dan JavaScript di dalam file · Tanpa backend</footer>
+</main><div class="toast" id="toast">Tersalin!</div>
+<script>
+const $ = (s, root=document) => root.querySelector(s);
+const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+const toast = (msg) => { const t=$("#toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),1500); };
+$$("[data-copy]").forEach(btn=>btn.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(btn.dataset.copy);toast("Kode berhasil disalin");}catch(e){toast("Salin manual dari contoh kode");}}));
+$$(".lesson-nav button").forEach(btn=>btn.addEventListener("click",()=>{$$(".lesson-nav button").forEach(b=>b.classList.toggle("active",b===btn));$$(".lesson").forEach(l=>l.classList.toggle("active",l.id==="lesson-"+btn.dataset.lesson));}));
+$$(".quiz").forEach(quiz=>{$$(".options button",quiz).forEach(btn=>btn.addEventListener("click",()=>{const feedback=$(".feedback",quiz);$$(".options button",quiz).forEach(b=>{b.disabled=true;if(b.dataset.correct==="true")b.classList.add("correct");});if(btn.dataset.correct==="true"){feedback.textContent="Benar! Mantap, konsepnya mulai nempel. ✓";feedback.style.color="var(--green)";}else{btn.classList.add("wrong");feedback.textContent="Belum tepat. Lihat jawaban hijau, lalu coba pahami alasannya.";feedback.style.color="var(--red)";}}));});
+const jsonInput=$("#jsonInput"),jsonOutput=$("#jsonOutput");
+$("#checkJson").addEventListener("click",()=>{try{const parsed=JSON.parse(jsonInput.value);jsonOutput.textContent="JSON VALID ✓\n\nTipe data teratas: "+(Array.isArray(parsed)?"array":parsed===null?"null":typeof parsed)+"\n\n"+JSON.stringify(parsed,null,2);jsonOutput.style.color="var(--green)";}catch(e){jsonOutput.textContent="JSON TIDAK VALID ✕\n\n"+e.message+"\n\nPeriksa tanda kutip, koma, dan pasangan kurung.";jsonOutput.style.color="var(--red)";}});
+$("#formatJson").addEventListener("click",()=>{try{jsonInput.value=JSON.stringify(JSON.parse(jsonInput.value),null,2);jsonOutput.textContent="JSON berhasil dirapikan. ✓";jsonOutput.style.color="var(--green)";}catch(e){jsonOutput.textContent="Belum bisa dirapikan karena JSON masih tidak valid.\n"+e.message;jsonOutput.style.color="var(--red)";}});
+$("#resetJson").addEventListener("click",()=>{jsonInput.value='{\n  "nama": "Vairon",\n  "level": 10,\n  "aktif": true,\n  "item": ["pedang", "apel"]\n}';jsonOutput.textContent="Contoh direset.";jsonOutput.style.color="var(--green)";});
+const jsInput=$("#jsInput"),jsOutput=$("#jsOutput");
+const jsExample=jsInput.value;
+$("#resetJs").addEventListener("click",()=>{jsInput.value=jsExample;jsOutput.textContent="Contoh direset.";jsOutput.style.color="var(--green)";});
+$("#runJs").addEventListener("click",()=>{const logs=[];const safeConsole={log:(...args)=>logs.push(args.map(v=>{if(typeof v==="string")return v;try{return JSON.stringify(v);}catch{return String(v);}}).join(" "))};try{const code=jsInput.value;const forbidden=/\b(window|document|globalThis|localStorage|sessionStorage|fetch|XMLHttpRequest|WebSocket|import|eval|Function|process|require|navigator|location)\b/;if(forbidden.test(code))throw new Error("Kode ini memakai API yang dibatasi di playground.");const run=new Function("console",'"use strict";\n'+code);run(safeConsole);jsOutput.textContent=logs.length?logs.join("\n"):"Kode selesai. Tidak ada output console.log().";jsOutput.style.color="var(--green)";}catch(e){jsOutput.textContent="Terjadi error:\n"+e.name+": "+e.message;jsOutput.style.color="var(--red)";}});
+function updateProgress(){const checks=$$("[data-progress]");const done=checks.filter(c=>c.checked).length;const pct=Math.round(done/checks.length*100);$("#progressText").textContent=pct+"%";$("#progressBar").style.width=pct+"%";$("#doneCount").textContent=done+" / "+checks.length;}
+$$("[data-progress]").forEach(c=>c.addEventListener("change",updateProgress));updateProgress();
+</script>
+</body>
+</html>
